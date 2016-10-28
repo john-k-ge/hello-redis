@@ -22,6 +22,8 @@ import (
 var redisClient *redis.Client
 var redisHost, redisPass, redisPort string
 var myService cfServiceDiscovery.ServiceDescriptor
+var serviceName string
+var planName string
 
 // Test redis by:
 // 1)  generating a k:v pair,
@@ -69,10 +71,9 @@ func serviceDescriptor(w http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(w, "Cannot generate service descriptor: %v", err)
 		return
 	}
-	fmt.Printf("Here's the data:  %s", data)
+	fmt.Printf("Here's the data:  %s\n", data)
 	//fmt.Fprintf(w, "%s", myService)
 	json.NewEncoder(w).Encode(myService)
-
 	return
 }
 

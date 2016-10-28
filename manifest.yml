@@ -4,5 +4,5 @@ applications:
     buildpack: https://github.com/cloudfoundry/go-buildpack
     memory: 64M
 env:
-  SERVICE_NAME: "redis-11"
+  SERVICE_NAME: "redis-12"
   SERVICE_PLAN: "shared-vm"
